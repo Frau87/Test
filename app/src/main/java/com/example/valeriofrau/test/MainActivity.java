@@ -23,9 +23,12 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     int numberOfCoffees = 2;
+    ;
 
     public void submitOrder(View view) {
-        displayPrice(numberOfCoffees * 3);
+        int price = (numberOfCoffees * 3);
+        String priceMessage = "Total: " + (price) + " €\n" + "Thank You!" ;
+        displayMessage(priceMessage);
     }
 
     /**
@@ -44,6 +47,9 @@ public class MainActivity extends ActionBarActivity {
     public void increment(View view) {
         numberOfCoffees += 1;
         display(numberOfCoffees);
+        int price = (numberOfCoffees * 3);
+        String priceMessage = "Total: " + price + " €";
+        displayMessage(priceMessage);
     }
 
     /**
@@ -53,14 +59,26 @@ public class MainActivity extends ActionBarActivity {
     public void decrement(View view) {
         numberOfCoffees -= 1;
         display(numberOfCoffees);
+        int price = (numberOfCoffees * 3);
+        String priceMessage = "Total: " + price + " €";
+        displayMessage(priceMessage);
     }
 
 
     /**
      * This method displays the given price on the screen.
      */
-    private void displayPrice(int number) {
+
+    /*private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+    */
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
