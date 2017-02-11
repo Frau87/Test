@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(
                 R.id.quantity_text_view);
         quantityTextView.setText("" + number);
@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void increment(View view) {
         numberOfCoffees += 1;
-        display(numberOfCoffees);
+        displayQuantity(numberOfCoffees);
         int price = (numberOfCoffees * 3);
         String priceMessage = "Total: " + price + " €";
         displayMessage(priceMessage);
@@ -58,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void decrement(View view) {
         numberOfCoffees -= 1;
-        display(numberOfCoffees);
+        displayQuantity(numberOfCoffees);
         int price = (numberOfCoffees * 3);
         String priceMessage = "Total: " + price + " €";
         displayMessage(priceMessage);
